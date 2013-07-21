@@ -1,13 +1,22 @@
-## Middleman
+### Middleman
 http://middlemanapp.com
 
-## Getting Setup
+#### Clone
 ```
-gem install middleman
+git@github.com:aekaplan/work.git
 ```
 
-## Start the Server
+#### Bundle Install
+```
+bundle install
+```
+
+#### Start the Server
 ```
 bundle exec middleman
 ```
+
+#### Visit
+```
 localhost:4567
+```

@@ -3,6 +3,16 @@ $(document).ready( function() {
     effect : "fadeIn"
   });
 
+  $(".toggle-wrap").click( function() {
+    var navigation = $("header ul");
+
+    if (navigation.hasClass("visible")) {
+      navigation.removeClass("visible").addClass("hidden");
+    } else {
+      navigation.removeClass("hidden").addClass("visible");
+    }
+  });
+
   $(function() {
     var $window = $(window),
         main   = $('.sidebar-container'),

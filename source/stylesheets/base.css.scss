@@ -1,10 +1,20 @@
+/* Compass
+-------------------------------------------------------------- */
 @import "compass/css3/box-sizing";
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "compass/css3/user-interface";
 @import "compass/css3/appearance";
 
-/*  Layout
+/* Variables
+-------------------------------------------------------------- */
+$gray: #eceef1;
+$lightgray: #d8dde3;
+$mediumgray: #c2c8cd;
+$darkgray: #afb7be;
+$green: #26ae90;
+
+/* Layout
 -------------------------------------------------------------- */
 * {
   @include box-sizing(border-box);
@@ -19,6 +29,7 @@
 
 body {
   background: #fff;
+  color: #666;
   font-family: "proxima-nova",sans-serif;
   font-weight: 400;
   font-size: 100%;
@@ -26,17 +37,12 @@ body {
 }
 
 header {
-  background: #eceef1;
-  border-bottom: 1px solid #eee;
+  background: $gray;
   overflow: hidden;
   padding: 0.5em 0;
   .container {
     padding: 0;
   }
-}
-
-.nav a {
-  display: block;
 }
 
 .row {
@@ -69,9 +75,70 @@ header {
   }
 }
 
-/*  #Typography
+/* Navigation
+-------------------------------------------------------------- */
+.logo-wrap {
+  float: left;
+  padding: 0.52em 0;
+}
+
+
+.logo {
+  background: url("/images/logo.png");
+  display: block;
+  height: 23px;
+  width: 86px;
+  margin: 0;
+}
+
+.toggle-wrap {
+  cursor: pointer;
+  float: right;
+  padding: 0.52em 0;
+}
+
+.toggle {
+  background: url("/images/toggle.png");
+  display: none;
+  float: right;
+  height: 23px;
+  width: 27px;
+}
+
+header {
+  @include user-select(none);
+  ul {
+    float: right;
+    height: auto;
+    width: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    border: 0;
+    float: left;
+    margin-left: 1.5em;
+    &:first-child {
+      margin-left: 0;
+    }
+    a {
+      color: $mediumgray;
+      display: block;
+      font-weight: 600;
+      padding: 0.5em 0;
+      &:hover {
+        color: $darkgray;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Typography
 -------------------------------------------------------------- */
 h1, h2, h3, h4 {
+  color: #444;
   margin: 0;
 }
 
@@ -83,20 +150,19 @@ h3 {
 }
 
 h4 {
- color: #999;
+ color: $darkgray;
  font-weight: 400;
  margin-bottom: 1em;
 }
 
 p {
-  color: #333;
   margin: 0 0 1em 0;
 }
 
-/*  Links
+/* Links
 -------------------------------------------------------------- */
 a {
-  color: #26ae90;
+  color: $green;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -107,6 +173,7 @@ a {
 --------------------------------------------------*/
 img,
 .lazy {
+  border: 1px solid $gray;
   @include border-radius(4px);
   height: auto;
   width: 100%;
@@ -123,11 +190,11 @@ img,
 --------------------------------------------------*/
 .button {
   @include appearance(none);
-  background: #eceef1;
+  background: $gray;
   border: none;
   @include border-radius(4px);
   @include box-sizing(border-box);
-  color: #999;
+  color: $mediumgray;
   cursor: pointer;
   display: block;
   font: inherit;
@@ -137,21 +204,15 @@ img,
   position: relative;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   @include user-select(none);
   vertical-align: middle;
   white-space: nowrap;
-}
-
-.button:hover,
-.button:focus,
-.button:active {
-  text-decoration: none;
-}
-
-.button:disabled,
-.button.is-disabled {
-  cursor: default;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $darkgray;
+    text-decoration: none;
+  }
 }
 
 .button::-moz-focus-inner {
@@ -181,6 +242,20 @@ img,
 .row,
 .sidebar {
   *zoom: 1;
+}
+
+/* Retina Images
+--------------------------------------------------*/
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    background: url("/images/logo@2x.png");
+    background-size: 86px 23px;
+  }
+
+  .toggle {
+    background: url("/images/toggle@2x.png");
+    background-size: 27px 23px;
+  }
 }
 
 /* Media Queries (Desktop)
@@ -215,4 +290,42 @@ img,
 /* Media Queries (Mobile)
 --------------------------------------------------*/
 @media screen and (max-width: 640px) {
+  .toggle {
+    display: block;
+  }
+
+  header {
+    ul {
+      height: 0;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      width: 100%;
+      &.hidden {
+        height: 0;
+      }
+      &.visible {
+        height: auto
+      }
+    }
+    li {
+      border-top: 1px solid $lightgray;
+      float: none;
+      list-style: none;
+      margin: 0;
+      text-align: center;
+      &:first-child {
+        border-top: none;
+      }
+    }
+    a {
+      color: $mediumgray;
+      display: block;
+      padding: 0.8em 0;
+      &:hover {
+        color: $darkgray;
+        text-decoration: none;
+      }
+    }
+  }
 }
