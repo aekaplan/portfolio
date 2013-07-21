@@ -1,9 +1,13 @@
+@import "compass/css3/box-sizing";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/user-interface";
+@import "compass/css3/appearance";
+
 /*  Layout
 -------------------------------------------------------------- */
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
 }
 
 .container {
@@ -41,13 +45,14 @@ header {
 
 .column {
   float: left;
-  margin: 0 6% 0 0;
+  margin: 0 0 0 6%;
   width: 100%;
   &:first-child {
     margin: 0;
   }
   &.two-thirds {
     width: 64.7%;
+    margin: 0 6% 0 0;
   }
   &.half {
     width: 48%;
@@ -60,22 +65,8 @@ header {
   }
   &.flow-opposite {
     float: right;
+    margin: 0;
   }
-}
-
-.lazy {
-  height: auto;
-  width: 100%;
-  margin-bottom: 1em;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.fixed {
-  position: fixed;
-  top: 25px;
-  width: 322px;
 }
 
 /*  #Typography
@@ -97,7 +88,12 @@ h4 {
  margin-bottom: 1em;
 }
 
-/*  #Links
+p {
+  color: #333;
+  margin: 0 0 1em 0;
+}
+
+/*  Links
 -------------------------------------------------------------- */
 a {
   color: #26ae90;
@@ -105,6 +101,62 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+/* Images & Lazy Load
+--------------------------------------------------*/
+img,
+.lazy {
+  @include border-radius(4px);
+  height: auto;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.fixed {
+  position: fixed;
+  top: 25px;
+  width: 322px;
+}
+
+/* Buttons
+--------------------------------------------------*/
+.button {
+  @include appearance(none);
+  background: #eceef1;
+  border: none;
+  @include border-radius(4px);
+  @include box-sizing(border-box);
+  color: #999;
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  line-height: normal;
+  margin: 0;
+  padding: 0.8em 1em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include user-select(none);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  text-decoration: none;
+}
+
+.button:disabled,
+.button.is-disabled {
+  cursor: default;
+}
+
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
 }
 
 /* Clearfix

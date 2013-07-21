@@ -19,10 +19,13 @@
 
     <!-- Javascript -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <%= javascript_include_tag  "all" %>
+    <%= javascript_include_tag  "main", "lazyload" %>
+    <noscript>
+      <style>.lazy { display: none }</style>
+    </noscript>
   </head>
 
-  <header>
+  <header id="top">
     <div class="container">
       <div class="column thirds nav">
         <a href="/">Go Big Recuriting</a>

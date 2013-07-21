@@ -1,4 +1,8 @@
 $(document).ready( function() {
+  $("img.lazy").lazyload({
+    effect : "fadeIn"
+  });
+
   $(function() {
     var $window = $(window),
         main   = $('.sidebar-container'),
@@ -13,5 +17,10 @@ $(document).ready( function() {
 
     $(window).resize(floatSidebarMenu);
     $(window).scroll(floatSidebarMenu);
+  });
+
+  $(".scroll").click(function(event){
+    event.preventDefault();
+    $('html,body').animate({scrollTop:$(this.hash).offset().top}, 400);
   });
 });
