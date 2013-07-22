@@ -2,24 +2,48 @@
 title: SCNA
 ---
 <div class="container sidebar-container">
-  <div class="column third flow-opposite">
+  <div class="column sidebar-third flow-opposite">
     <div class="sidebar">
+      <%= partial "work-navigation" %>
+
       <h3>SCNA</h3>
       <h4>Identity, Print, Digital</h4>
-      <p>
-      SCNA is a conference for software professionals interested in improving their craft, their community, and themselves.
-      </p>
+      <p>SCNA is a conference for software professionals interested in improving their craft, their community, and themselves.</p>
 
-      <%= link_to "gobigrecruiting.com", "http://gobigrecruiting.com", :target => "_blank" %>
+      <%= link_to "scna.softwarecraftsmanship.com", "http://scna.softwarecraftsmanship.com/", :target => "_blank", :class => "website" %>
     </div>
   </div>
   <div class="column two-thirds work-images">
-    <%= image_tag "scna-1.jpg", :class => "lazy" %>
-    <%= image_tag "scna-1.jpg", :class => "lazy" %>
-    <%= image_tag "scna-1.jpg", :class => "lazy" %>
-    <%= image_tag "scna-1.jpg", :class => "lazy" %>
-    <%= image_tag "scna-1.jpg", :class => "lazy" %>
-    <%= image_tag "scna-1.jpg", :class => "lazy" %>
-  </div>
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-identity.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-identity.jpg" %></noscript>
 
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-home.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-home.jpg" %></noscript>
+
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-home-speakers.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-home-speakers.jpg" %></noscript>
+
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-speakers.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-speakers.jpg" %></noscript>
+
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-videos.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-videos.jpg" %></noscript>
+
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-mobile.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-mobile.jpg" %></noscript>
+
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-logo.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-logo.jpg" %></noscript>
+
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-icon-learn.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-icon-learn.jpg" %></noscript>
+
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-icon-collaborate.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-icon-collaborate.jpg" %></noscript>
+
+    <%= image_tag "placeholder.jpg", "data-original" => "/images/scna-icon-build.jpg", :class => "lazy" %>
+    <noscript><%= image_tag "scna-icon-build.jpg" %></noscript>
+
+    <%= link_to "Back to Top", "#top", :class => "scroll button" %>
+  </div>
 </div>

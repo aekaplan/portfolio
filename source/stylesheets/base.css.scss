@@ -26,7 +26,6 @@ $green: #26ae90;
 .container {
   margin: 0 auto;
   max-width: 1100px;
-  padding: 4em 0;
   width: 90%;
 }
 
@@ -41,6 +40,7 @@ body {
 
 header {
   background: $gray;
+  margin-bottom: 3em;
   overflow: hidden;
   padding: 0.5em 0;
   .container {
@@ -56,21 +56,22 @@ header {
   float: left;
   margin: 0 0 0 6%;
   width: 100%;
-  &:first-child {
-    margin: 0;
-  }
   &.two-thirds {
-    width: 64.7%;
     margin: 0 6% 0 0;
+    width: 64.7%;
   }
   &.half {
-    width: 48%;
+    width: 48.8%;
   }
-  &.third {
+  &.sidebar-third {
     width: 29.3%;
   }
-  &.fourth {
-    width: 22%;
+  &.third {
+    margin: 0 0 0 3%;
+    width: 31.3%;
+  }
+  &:first-child {
+    margin: 0;
   }
   &.flow-opposite {
     float: right;
@@ -80,8 +81,23 @@ header {
 
 .fixed {
   position: fixed;
-  top: 25px;
+  top: 30px;
   width: 322px;
+}
+
+footer {
+  border-top: 1px solid $gray;
+  margin-top: 2em;
+  overflow: hidden;
+  padding: 1em 0;
+  .container {
+    padding: 0;
+  }
+  p {
+    color: $mediumgray;
+    margin-bottom: 0;
+    text-align: center;
+  }
 }
 
 /* Navigation
@@ -164,7 +180,7 @@ header {
   display: block;
   cursor: pointer;
   height: 30px;
-  @include opacity(0.6);
+  @include opacity(0.7);
   width: 30px;
   &:hover {
     @include opacity(1);
@@ -229,7 +245,7 @@ img,
   @include border-radius(4px);
   height: auto;
   width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 /* Buttons
@@ -246,7 +262,7 @@ img,
   font: inherit;
   line-height: normal;
   margin: 0;
-  padding: 0.8em 1em;
+  padding: 1em;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -323,18 +339,30 @@ img,
   }
 }
 
+/* Media Queries (Large Desktop)
+--------------------------------------------------*/
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+
 /* Media Queries (Desktop)
 --------------------------------------------------*/
 @media screen and (max-width: 1100px) {
-  .container {
-    padding: 1em 0;
+  header {
+    margin-bottom: 1.5em;
+  }
+
+  footer {
+    margin-top: 1.5em;
   }
 
   .column {
     &.two-thirds,
     &.half,
-    &.third,
-    &.fourth {
+    &.sidebar-third {
       margin: 0;
       width: 100%;
     }
@@ -359,6 +387,16 @@ img,
     ul {
       margin: 0 auto;
       width: 122px;
+    }
+  }
+}
+
+/* Media Queries (iPad)
+--------------------------------------------------*/
+@media screen and (max-width: 900px) {
+  .column {
+    &.third {
+      width: 48.5%;
     }
   }
 }
@@ -397,5 +435,16 @@ img,
         padding: 0.8em 0;
       }
     }
+  }
+
+  .column {
+    &.third {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  img.lazy {
+    margin-bottom: 1em;
   }
 }
