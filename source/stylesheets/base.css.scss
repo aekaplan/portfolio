@@ -207,8 +207,13 @@ h1, h2, h3, h4 {
 h3 {
   font-size: 2em;
   font-weight: 300;
-  line-height: 1em;
+  line-height: 1.3em;
   margin-bottom: 0.2em;
+}
+
+.case-study-title {
+  font-size: 1.5em;
+  margin-bottom: 0.8em;
 }
 
 h4 {
@@ -241,7 +246,6 @@ a {
 --------------------------------------------------*/
 img,
 .lazy {
-  border: 1px solid $gray;
   @include border-radius(4px);
   height: auto;
   width: 100%;
@@ -339,24 +343,15 @@ img,
   }
 }
 
-/* Media Queries (Large Desktop)
---------------------------------------------------*/
-@media screen and (min-width: 1600px) {
-  .container {
-    max-width: 1400px;
-  }
-}
-
-
 /* Media Queries (Desktop)
 --------------------------------------------------*/
 @media screen and (max-width: 1100px) {
   header {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
   }
 
   footer {
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
 
   .column {
@@ -387,6 +382,9 @@ img,
     ul {
       margin: 0 auto;
       width: 122px;
+      &.no-grid {
+        width: 76px;
+      }
     }
   }
 }
