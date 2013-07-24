@@ -230,7 +230,11 @@ h4 {
 }
 
 p {
-  margin: 0 0 1em 0;
+  margin: 0 0 1.5em 0;
+}
+
+.sidebar p {
+  margin-bottom: 1em;
 }
 
 article {
@@ -249,18 +253,19 @@ article {
 }
 
 blockquote {
+  border-left: 5px solid $gray;
   margin: 1.5em 0;
+  padding-left: 1.5em;
   p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 300;
     line-height: 1.4em;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.5em;
   }
   cite {
-    color: $mediumgray;
     display: block;
     font-size: 1em;
-    font-style: normal
+    font-style: normal;
   }
 }
 
