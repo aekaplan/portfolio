@@ -253,7 +253,7 @@ article {
 }
 
 blockquote {
-  border-left: 5px solid $gray;
+  border-left: 5px solid $green;
   margin: 1.5em 0;
   padding-left: 1.5em;
   p {
@@ -292,7 +292,7 @@ img,
   @include border-radius(4px);
   height: auto;
   width: 100%;
-  margin-bottom: 1.5em;
+  margin-bottom: 7%;
 }
 
 /* Buttons
