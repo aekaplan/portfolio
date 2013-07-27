@@ -34,13 +34,15 @@ $darkgreen: #23a084;
 body {
   background: #fff;
   color: $pgray;
-  font-family: "proxima-nova",sans-serif;
+  font-family: "proxima-nova-n4", "proxima-nova", sans-serif; /* IE 8 Fix */
   font-weight: 400;
+  font-style: normal;
   font-size: 115%;
   line-height: 1.5em;
 }
 
-header {
+/* IE 8 Fix */
+.header {
   background: $gray;
   margin-bottom: 3em;
   overflow: hidden;
@@ -89,7 +91,8 @@ header {
   @include transition-duration(0.5s);
 }
 
-footer {
+/* IE 8 Fix */
+.footer {
   border-top: 1px solid $gray;
   margin-top: 2em;
   overflow: hidden;
@@ -133,7 +136,8 @@ footer {
   width: 27px;
 }
 
-header {
+/* IE 8 Fix */
+.header {
   @include user-select(none);
   ul {
     float: right;
@@ -151,6 +155,7 @@ header {
       color: $mediumgray;
       display: block;
       font-size: 0.9em;
+      font-style: normal;
       font-weight: 600;
       padding: 0.6em 0;
       &:hover {
@@ -237,7 +242,9 @@ p {
   margin-bottom: 1em;
 }
 
-article {
+/* IE 8 Fix */
+.article {
+  font-style: normal;
   max-width: 640px;
   h2 {
     font-size: 1.8em;
@@ -303,7 +310,7 @@ img,
   border: none;
   @include border-radius(4px);
   @include box-sizing(border-box);
-  color: #fff;
+  color: #fff !important; /* IE 8 Fix */
   cursor: pointer;
   display: block;
   font: inherit;
@@ -391,11 +398,13 @@ img,
 /* Media Queries (Desktop)
 --------------------------------------------------*/
 @media screen and (max-width: 1100px) {
-  header {
+  /* IE 8 Fix */
+  .header {
     margin-bottom: 1em;
   }
 
-  footer {
+  /* IE 8 Fix */
+  .footer {
     margin-top: 1em;
   }
 
@@ -442,7 +451,8 @@ img,
     display: block;
   }
 
-  header {
+  /* ie 8 fix */
+  .header {
     ul {
       float: none;
       height: 0;
