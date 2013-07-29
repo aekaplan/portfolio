@@ -4,7 +4,7 @@ $(document).ready( function() {
   });
 
   $(".toggle-wrap").click( function() {
-    var navigation = $("header ul");
+    var navigation = $(".header ul");
 
     if (navigation.hasClass("visible")) {
       navigation.removeClass("visible").addClass("hidden");
