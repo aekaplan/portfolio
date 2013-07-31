@@ -241,6 +241,7 @@ p {
 
 .sidebar p {
   margin-bottom: 1em;
+  max-width: 640px;
 }
 
 /* IE 8 Fix */
@@ -429,6 +430,12 @@ img,
     border-bottom: 1px solid #eceef1;
     margin-bottom: 2em;
     padding-bottom: 1em;
+    h3, h4, .website {
+      text-align: center;
+    }
+    p {
+      margin: 0 auto 1em auto;
+    }
   }
 
   .fixed {
@@ -442,6 +449,10 @@ img,
       margin: 0 auto;
       width: 127px;
     }
+  }
+
+  .article {
+    margin: 0 auto;
   }
 }
 
