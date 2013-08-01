@@ -3,7 +3,7 @@ http://middlemanapp.com
 
 Please use Ruby 1.9 or greater.
 
-#### Clone
+#### Git Clone
 ```
 git@github.com:aekaplan/work.git
 ```
