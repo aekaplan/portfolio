@@ -18,6 +18,8 @@ $headergray: #67737e;
 $pgray: #8a95a0;
 $green: #26ae90;
 $darkgreen: #23a084;
+$blue: #32a5f5;
+$darkblue: #0d95f3;
 
 /* Layout
 -------------------------------------------------------------- */
@@ -43,7 +45,7 @@ body {
 
 /* IE 8 Fix */
 .header {
-  background: $gray;
+  background: #333;
   margin-bottom: 3em;
   overflow: hidden;
   padding: 0.5em 0;
@@ -152,14 +154,14 @@ body {
       margin-left: 0;
     }
     a {
-      color: $mediumgray;
+      color: #FFF;
       display: block;
       font-size: 0.9em;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 400;
       padding: 0.6em 0;
       &:hover {
-        color: $darkgray;
+        color: #FFF;
         text-decoration: none;
       }
       &.button {
@@ -262,7 +264,7 @@ p {
 }
 
 blockquote {
-  border-left: 5px solid $green;
+  border-left: 5px solid #32a5f5;
   margin: 1.5em 0;
   padding-left: 1.5em;
   p {
@@ -287,7 +289,7 @@ ul {
 /* Links
 -------------------------------------------------------------- */
 a {
-  color: $green;
+  color: $blue;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -312,7 +314,7 @@ img,
 --------------------------------------------------*/
 .button {
   @include appearance(none);
-  background: $green;
+  background: $blue;
   border: none;
   @include border-radius(4px);
   @include box-sizing(border-box);
@@ -334,7 +336,7 @@ img,
   &:hover,
   &:focus,
   &:active {
-    background: $darkgreen;
+    background: $darkblue;
     color: #fff;
     text-decoration: none;
   }
@@ -483,7 +485,7 @@ img,
       }
     }
     li {
-      border-top: 1px solid $lightgray;
+      border-top: 1px solid #444;
       float: none;
       margin: 0;
       text-align: center;
