@@ -6,4 +6,12 @@ if ENV['RACK_ENV'] == 'heroku'
   map '/' do
     run Rack::File.new('build')
   end
+
+  map '/case-studies' do
+    run Rack::File.new('build/case-studies')
+  end
+
+  map '/files' do
+    run Rack::File.new('build/files')
+  end
 end
