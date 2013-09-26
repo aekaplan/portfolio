@@ -113,14 +113,14 @@ body {
 -------------------------------------------------------------- */
 .logo-wrap {
   float: left;
-  padding: 0.6em 0;
+  padding: 0.7em 0 0.6em 0;
 }
 
 .logo {
   background: url("/images/logo.png");
   display: block;
   height: 23px;
-  width: 144px;
+  width: 157px;
   margin: 0;
 }
 
@@ -379,7 +379,7 @@ img,
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .logo {
     background: url("/images/logo@2x.png");
-    background-size: 144px 23px;
+    background-size: 157px 23px;
   }
 
   .toggle {
