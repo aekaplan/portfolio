@@ -1,18 +1,11 @@
 if ENV['RACK_ENV'] == 'heroku'
-  use Rack::Static,
-    root:  'build',
-    index: 'index.html',
-    try: ['.html', 'index.html', '/index.html']
+  require 'rack/contrib/try_static'
+  use Rack::TryStatic,
+    root: 'build',
+    try:  ['.html', 'index.html', '/index.html'],
+    urls: %w[/]
 
   map '/' do
     run Rack::File.new('build')
-  end
-
-  map '/case-studies' do
-    run Rack::File.new('build/case-studies')
-  end
-
-  map '/files' do
-    run Rack::File.new('build/files')
   end
 end
